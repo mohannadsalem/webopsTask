@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     height: 100
   }
 });
-
+// REDUX flow to mapping State to Props
 function mapStateToProps(state, props) {
   return {
     isLoading: state.mainGridReducer.isLoading,
@@ -105,6 +105,8 @@ function mapStateToProps(state, props) {
   }
 }
 
+//Redux Flow mapping the props calls to actions to be dispatched
+
 function mapDispatchToProps(dispatch) {
   return {
     onLoadInitialData: (images, size) => dispatch(actions.LoadInitData(images, size)),
@@ -112,5 +114,5 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-//Connect everything
+//Connecting redux flow with the MainGrid component
 export default connect(mapStateToProps, mapDispatchToProps)(MainGrid);

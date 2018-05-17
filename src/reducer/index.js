@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { handleActions } from "redux-actions";
 import * as actions from "../actions/" //Import the actions types constant we defined in our actions
 
+// the Initial State for the app
 let defaultState = {
   isLoading: true,
   images: [],
@@ -9,6 +10,7 @@ let defaultState = {
   isLoadingMore: false,
 };
 
+// Reducers Introduced Here for data flows and updating state
 const mainGridReducer = handleActions({
   [actions.LoadDataSuccess]: (state, {payload}) => {
     return {

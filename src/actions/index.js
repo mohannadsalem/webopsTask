@@ -1,5 +1,5 @@
 import { createAction } from "redux-actions";
-
+// Default Actions required for redux flow  Used A predefined library called redux actions to organize the flow more
 export const LoadDataSuccess = createAction("LOAD_DATA_SUCCESS");
 export const LoadMoreDataSuccess = createAction("LOAD_MORE_DATA_SUCCESS");
 
