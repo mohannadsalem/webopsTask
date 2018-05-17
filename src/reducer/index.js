@@ -11,6 +11,7 @@ let defaultState = {
 };
 
 // Reducers Introduced Here for data flows and updating state
+//Used Handle Actions which provides more scalibilty instead of using switch case from redux actions
 const mainGridReducer = handleActions({
   [actions.LoadDataSuccess]: (state, {payload}) => {
     return {
