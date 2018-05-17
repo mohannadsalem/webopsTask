@@ -14,9 +14,12 @@ class MainGrid extends React.Component {
     const {images, size} = this.props
     this.props.onLoadInitialData(images, size);
   }
+
   handleEndReached=e => {
-    console.log(e, "END REACHED")
+    const {images,size} = this.props;
+    this.props.onLoadMore(images,size)
   }
+
   handleLoadMore = () => {
     const {images, size} = this.props
     this.props.onLoadMore(images, size);
@@ -53,7 +56,9 @@ class MainGrid extends React.Component {
   }
 
   render() {
+
     const {isLoading, images} = this.props
+    // to check if the app is fetching data or not for Loading to be displayed
     if (isLoading && images.length === 0)
       return (
         <View style={styles.container}>
@@ -62,6 +67,7 @@ class MainGrid extends React.Component {
             </View>
     )
 
+    // Main View for the Mobile Layout Used Flatlist which provides the required layout not ScrollView
     return (
       <View style={styles.container}>
             <FlatList
